@@ -1,0 +1,6 @@
+projectKey=sakai
+serverUrl=http://localhost:9009
+serverVersion=10.3.0.82913
+dashboardUrl=http://localhost:9009/dashboard?id=sakai
+ceTaskId=AY4UB9CaHvPswAS6i1Tj
+ceTaskUrl=http://localhost:9009/api/ce/task?id=AY4UB9CaHvPswAS6i1Tj

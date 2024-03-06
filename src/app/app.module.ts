@@ -11,6 +11,9 @@ import { EventService } from './demo/service/event.service';
 import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
+import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
+import {DialogConfig} from "@angular/cdk/dialog";
+import {ConfirmationService, MessageService} from "primeng/api";
 
 @NgModule({
     declarations: [AppComponent, NotfoundComponent],
@@ -24,6 +27,10 @@ import { PhotoService } from './demo/service/photo.service';
         NodeService,
         PhotoService,
         ProductService,
+        DialogService,
+        DynamicDialogRef,
+        MessageService,
+        ConfirmationService,
     ],
     bootstrap: [AppComponent],
 })

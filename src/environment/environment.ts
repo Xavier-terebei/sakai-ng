@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:3000/api/bts',
+  apiUrlFiles: /*'http://localhost/Terebei/API_REST_XFINANCE/',*/'',
+  userInfos: 'userinfo',
+  authenticated: 'authenticated',
+  CLIENT_ID: "",
+  CLIENT_SECRET: "",
+  SECRET_KEY: "4ef008e77adef268604e501ba3e44bfc7ffbc43cd5288899675c06fc8f53cfee334ba333f7264465df9c0d62ba6fea5c"
 };
 
 /*
@@ -14,3 +21,5 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+

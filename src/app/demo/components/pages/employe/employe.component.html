@@ -1,0 +1,101 @@
+<!--<div class="card">
+    <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{ product.code }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.quantity }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>-->
+<div class="card">
+<div class="grid">
+    <div class="col-12">
+
+        <div class="card px-6 py-6">
+            <!--<p-toast></p-toast>-->
+            <p-toolbar styleClass="mb-4">
+                <ng-template pTemplate="right">
+                        <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="openmodal()"></button>
+                </ng-template>
+
+            </p-toolbar>
+
+
+                <p-table #dt1
+                         [value]="userList" dataKey="id"
+                         [rows]="10"
+                         [loading]="loading"
+                         [rowHover]="true"
+                         [paginator]="true"
+                         [globalFilterFields]="['nomclient']"
+                         [showCurrentPageReport]="true"
+                         [rowsPerPageOptions]="[10, 25, 50]"
+                         currentPageReportTemplate="{first} à {last} sur {totalRecords} éléments"
+                         [filterDelay]="0"
+                >
+                    <ng-template pTemplate="caption">
+                        <div class="flex justify-content-between flex-column sm:flex-row">
+                <span class="p-input-icon-left mb-2">
+							<i class="pi pi-search"></i>
+							<input pInputText type="text" #filter (input)="onGlobalFilter(dt1, $event)" placeholder="Search Keyword" class="w-full"/>
+						</span>
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Action</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-customer>
+                        <tr>
+                            <td>{{customer.nomutilisateur}}</td>
+                            <td>{{customer.prenomutilisateur}}</td>
+                            <td>{{customer.emailutilisateur}}</td>
+                            <td>{{customer.contactutilisateur}}</td>
+                            <td>
+                                <div class="flex flex-wrap gap-2">
+                                    <button pButton pRipple type="button" icon="pi pi-pencil" class="p-button-rounded" (click)="handleUpdate(customer)"></button>
+                                    <button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="confirm(customer)"></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card flex justify-content-center">
+    <p-toast></p-toast>
+    <p-confirmDialog #cd>
+        <ng-template pTemplate="headless" let-message>
+            <div class="flex flex-column align-items-center p-5 surface-overlay border-round">
+                <div class="border-circle bg-primary inline-flex justify-content-center align-items-center h-6rem w-6rem -mt-8">
+                    <i class="pi pi-question text-5xl"></i>
+                </div>
+                <span class="font-bold text-2xl block mb-2 mt-4">{{ message.header }}</span>
+                <p class="mb-0">{{ message.message }}</p>
+                <div class="flex align-items-center gap-2 mt-4">
+                    <button pButton label="Save" (click)="cd.accept()" class="w-8rem"></button>
+                    <button pButton label="Cancel" (click)="cd.reject()" class="p-button-outlined w-8rem "></button>
+                </div>
+            </div>
+        </ng-template>
+    </p-confirmDialog>
+</div>

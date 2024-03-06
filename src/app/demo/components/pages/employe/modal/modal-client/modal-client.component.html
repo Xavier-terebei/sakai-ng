@@ -1,0 +1,32 @@
+
+<div class="modal-content">
+<form class="modal-form" [formGroup]="_form" >
+    <div class="card">
+        <div class="p-fluid p-formgrid grid">
+                <div class="field col-6">
+                <label>Nom</label>
+                <input pInputText formControlName="nomutilisateur" type="text" />
+            </div>
+                <div class="field col-6">
+                    <label>Prenom</label>
+                    <input pInputText formControlName="prenomutilisateur"  type="text" />
+                </div>
+            <div class="field col-6">
+                <label>Email</label>
+                <input pInputTextarea formControlName="emailutilisateur" type="date" />
+            </div>
+                <div class="field col-6">
+                <label>Contact</label>
+                <input pInputText formControlName="contactutilisateur" type="text" />
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-wrap gap-2">
+        <button pButton pRipple type="button" icon="pi pi-check" label="Save" class="p-button-help p-button-text" (click)="saveInfo($event)"></button>
+        <button pButton pRipple type="button" icon="pi pi-times" label="Cancel" class="p-button-danger p-button-text" (click)="close(false)"></button>
+    </div>
+
+</form>
+</div>
+
